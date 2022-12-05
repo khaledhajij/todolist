@@ -1,14 +1,4 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faDeleteLeft,
-  faEdit,
-  faRecycle,
-  faSearch,
-  faSort,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
-import MyDropDown from "./MyDropDown";
+import React from "react";
 import Todo from "./Todo";
 const Workspace = ({ show, setShow, todos, setTodos, input, setinput }) => {
   const completedTodos = todos
@@ -54,11 +44,11 @@ const Workspace = ({ show, setShow, todos, setTodos, input, setinput }) => {
           </div>
           <div className="main completed">
             <div className="items-lists">
-            <div className="items-lists">
               <h5>Uncompleted</h5>
               {!uncompletedTodos.length ? <p>No todos</p> : null}
               <ul className="uncompleted">{uncompletedTodos}</ul>
             </div>
+            <div className="items-lists">
               <h5>Completed</h5>
               {!completedTodos.length ? <p>No todos</p> : null}
               <ul className="completed">{completedTodos}</ul>

@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPaintbrush,
   faPlus,
-  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 const MyInput = (props) => {
   const handleChange = (e) => {

@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Workspace from "./Components/Workspace";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,9 +7,14 @@ import { useEffect, useState } from "react";
 function App() {
   const [show, setShow] = useState(false);
   const [todos, setTodos] = useState([]);
+  const [data, setData] = useState(todos);
+  useEffect(() => {
+    setData(todos);
+  }, [todos]);
+  console.log(data);
   let [input, setinput] = useState({
     title: "",
-    status: 'false',
+    status: "false",
     category: "",
     categories: [],
     color: "",
