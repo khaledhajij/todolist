@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import Workspace from "./Components/Workspace";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Styles/style.css";
+import Add from "./Components/Add";
+import { useEffect, useState } from "react";
 function App() {
+  const [show, setShow] = useState(false);
+  const [todos, setTodos] = useState([]);
+  let [input, setinput] = useState({
+    title: "",
+    status: 'false',
+    category: "",
+    categories: [],
+    color: "",
+    id: 0,
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Workspace
+        show={show}
+        setShow={setShow}
+        todos={todos}
+        setTodos={setTodos}
+        input={input}
+        setinput={setinput}
+      />
+      <Add
+        show={show}
+        setShow={setShow}
+        todos={todos}
+        setTodos={setTodos}
+        input={input}
+        setinput={setinput}
+      />
     </div>
   );
 }

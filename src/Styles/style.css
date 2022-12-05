@@ -1,0 +1,207 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+:root {
+  --gray: #646681;
+}
+
+*,
+label {
+  font-family: poppins;
+  transition-duration: 0.2s;
+}
+
+.myContainer {
+  margin: 0px 10%;
+}
+
+#root,
+.App {
+  height: 100%;
+}
+
+.Workspace {
+  height: 100%;
+}
+.Workspace .search-icon {
+  z-index: 0;
+}
+.Workspace h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--gray);
+}
+.Workspace .myContainer {
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+.Workspace .myContainer .btn-main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+.Workspace .myContainer .buttons-bar {
+  display: flex;
+  gap: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  justify-content: center;
+}
+.Workspace .myContainer .buttons-bar * {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Workspace .myContainer .buttons-bar input {
+  border-radius: 0.375rem 0 0 0.375rem;
+}
+.Workspace .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #ecedf6;
+  width: 100%;
+  border-radius: 30px;
+}
+@media (max-width: 900px) {
+  .Workspace .main {
+    flex-direction: column;
+  }
+}
+.Workspace .main div.items-lists {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+.Workspace .main ul {
+  width: 100%;
+  padding-left: 0px;
+}
+
+.Add-container {
+  position: fixed;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+.Add-container .Add {
+  z-index: 1;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: #ecedf6;
+  width: 70%;
+  padding: 50px;
+  border-radius: 5px;
+}
+.Add-container .Add .cancel-icon {
+  position: absolute;
+  right: 0px;
+  top: -50px;
+  background-color: #ecedf6;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+}
+.Add-container .Add .cancel-icon:hover {
+  background-color: red;
+  color: white;
+}
+.Add-container .Add .input-group .form-outline {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.Add-container .Add .input-group .form-outline label {
+  color: rgb(100, 102, 129);
+}
+.Add-container .Add .input-group button {
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  width: 40px;
+}
+.Add-container .Add .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.Add-container .Add .buttons button {
+  width: 100px;
+}
+
+.todo > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 10px 0px;
+  background-color: rgba(94, 206, 179, 0.4);
+  border-radius: 30px;
+}
+.todo > li .info p {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+.todo > li .info h3 {
+  font-size: 20px;
+  padding-left: 10px;
+}
+.todo > li > ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 10px;
+  width: 40%;
+  justify-content: space-evenly;
+}
+.todo > li > ul li {
+  padding: 2px 10px;
+  text-align: center;
+  font-size: 13px;
+  border-radius: 10px;
+  background-color: #5eceb3;
+  color: white;
+}
+.todo > li div button {
+  margin: 0px 10px;
+}
+
+.add-btns {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0px;
+}
+
+.form-outline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}/*# sourceMappingURL=style.css.map */
