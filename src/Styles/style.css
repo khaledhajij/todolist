@@ -63,6 +63,13 @@ label {
 .Workspace .myContainer .buttons-bar .input-group {
   flex-wrap: nowrap;
 }
+.Workspace .myContainer .buttons-bar .input-group input {
+  width: 90%;
+  border-radius: 0.375rem !important;
+}
+.Workspace .myContainer .buttons-bar .input-group button {
+  border-radius: 0.375rem !important;
+}
 .Workspace .myContainer .buttons-bar .dropdowns {
   display: flex;
 }
