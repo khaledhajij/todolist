@@ -39,6 +39,9 @@ label {
       width: 100%;
     }
     .buttons-bar {
+      .input-group{
+        flex-wrap: nowrap;
+      }
       flex-wrap: wrap;
       box-shadow: 0px -40px 54px 15px #0000007a;
       position: fixed;

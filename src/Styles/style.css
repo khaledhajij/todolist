@@ -60,6 +60,9 @@ label {
   background-color: white;
   padding: 20px;
 }
+.Workspace .myContainer .buttons-bar .input-group {
+  flex-wrap: nowrap;
+}
 .Workspace .myContainer .buttons-bar .dropdowns {
   display: flex;
 }
