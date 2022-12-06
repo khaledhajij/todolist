@@ -18,7 +18,7 @@ function App() {
     if (todos.length === 0) {
       setTodos(stableData);
     }
-  }, [stableData]);
+  }, [stableData,todos.length]);
   let [input, setinput] = useState({
     title: "",
     status: "false",
