@@ -8,8 +8,6 @@ import {
 
 const Todo = (props) => {
   const handleCompletion = ({ status, id }) => {
-    console.log(props);
-    console.log(status, id);
     props.setTodos(
       [...props.todos].map((todo) => {
         return todo.id === id
@@ -34,24 +32,24 @@ const Todo = (props) => {
         <div className="info">
           <h3>{props.title}</h3>
         </div>
-        {/* <ul>
+        <ul>
           {props.categories.map((ctg) => (
-            <li>{ctg}</li>
+            <li key={ctg}>{ctg}</li>
           ))}
-        </ul> */}
+        </ul>
         <div className="add-btns">
           <button
             type="button"
-            class="btn btn-danger search-icon"
+            className="btn btn-danger methods.search-icon"
             onClick={() => handleDelete(props.id)}
           >
             <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
           </button>
           <button
             type="button"
-            class={`btn btn-${
+            className={`btn btn-${
               props.status === "false" ? "success" : "danger"
-            } search-icon`}
+            } methods.search-icon`}
             onClick={() => handleCompletion(props)}
           >
             <FontAwesomeIcon

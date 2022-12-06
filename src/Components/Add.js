@@ -10,6 +10,10 @@ const Add = ({
   setTodos,
   input,
   setinput,
+  stableData,
+  setStableData,
+  methods,
+  setmethods
 }) => {
   const data = [
     { name: "title", value: input.title },
@@ -18,24 +22,28 @@ const Add = ({
   ];
   const handleAdd = () => {
     setTodos([...todos, input]);
+    setStableData([...stableData, input]);
     data.push(input);
     setShow(false);
     setinput({
       title: "",
-      status: 'true',
+      status: 'false',
       category: "",
       categories: [],
       color: "",
       id: todos.length + 1,
     });
+
   };
-  const form = data.map((obj) => (
-    <MyInput {...obj} setinput={setinput} input={input} />
+  const validation = input.title.length && input.categories.length
+
+  const form = data.map((obj,index) => (
+    <MyInput {...obj} key={index} setinput={setinput} input={input} methods={methods} setmethods={setmethods} />
   ));
   return (
     <div
       className="Add-container"
-      style={show ? { opacity: 1 } : { opacity: 0, "z-index": "-1" }}
+      style={show ? { opacity: 1 } : { opacity: 0, "zIndex": "-1" }}
     >
       <div className="Add">
         <FontAwesomeIcon
@@ -43,17 +51,17 @@ const Add = ({
           className="cancel-icon"
           onClick={() => setShow(false)}
         />
-        <div class="form-outline">{form}</div>
+        <div className="form-outline">{form}</div>
         <div className="categories-container info todo">
           {input.categories.map((ctg) => (
-            <li>{ctg}</li>
+            <li key={ctg}>{ctg}</li>
           ))}
         </div>
         <div className="buttons">
-          <button className="btn btn-primary" onClick={handleAdd}>
+          <button className="btn btn-primary" onClick={handleAdd} disabled={!validation}>
             Add Task
           </button>
-          <button className="btn btn-secondary">Cancel</button>
+          <button className="btn btn-secondary" onClick={() => setShow(false)}>Cancel</button>
         </div>
       </div>
     </div>

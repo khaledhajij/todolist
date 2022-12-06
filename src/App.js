@@ -5,13 +5,20 @@ import "./Styles/style.css";
 import Add from "./Components/Add";
 import { useEffect, useState } from "react";
 function App() {
+  const [methods, setmethods] = useState({
+    search: "",
+    categories: "",
+    status: "All",
+  });
   const [show, setShow] = useState(false);
-  const [todos, setTodos] = useState([]);
-  const [data, setData] = useState(todos);
+  const [thisCat, setThisCat] = useState("All");
+  const [stableData, setStableData] = useState([]);
+  const [todos, setTodos] = useState(stableData);
   useEffect(() => {
-    setData(todos);
-  }, [todos]);
-  console.log(data);
+    if (todos.length === 0) {
+      setTodos(stableData);
+    }
+  }, [stableData]);
   let [input, setinput] = useState({
     title: "",
     status: "false",
@@ -29,6 +36,12 @@ function App() {
         setTodos={setTodos}
         input={input}
         setinput={setinput}
+        stableData={stableData}
+        setStableData={setStableData}
+        methods={methods}
+        setmethods={setmethods}
+        thisCat={thisCat}
+        setThisCat={setThisCat}
       />
       <Add
         show={show}
@@ -37,6 +50,10 @@ function App() {
         setTodos={setTodos}
         input={input}
         setinput={setinput}
+        stableData={stableData}
+        setStableData={setStableData}
+        methods={methods}
+        setmethods={setmethods}
       />
     </div>
   );
